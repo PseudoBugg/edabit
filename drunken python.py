@@ -3,14 +3,14 @@
 
 
 def str_to_int(num_str):
-    dec_places = {11: 10000000000, 10: 1000000000, 9: 100000000, 8: 10000000, 7: 1000000, 6: 100000, 5: 10000, 4: 1000,
-                  3: 100, 2: 10, 1: 1}
     char_digit = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}
     num = 0
+    dec = 1
     length = len(num_str)
     for i in range(length):
-        x = char_digit[num_str[0 - (i + 1)]] * dec_places[i + 1]
+        x = char_digit[num_str[0 - (i + 1)]] * dec
         num = num + x
+        dec = dec * 10
     return num
 
 
